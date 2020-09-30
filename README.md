@@ -13,3 +13,5 @@
 #### Proj2 - neural network
 ![dbmoon.png](https://i.loli.net/2020/09/27/Ag5c4GEhKy8vtZU.png)
 
+#### Proj3 - mnist
+![res.png](https://i.loli.net/2020/09/30/K6GwINWJFex9pfi.png)
