@@ -5,13 +5,21 @@ class Net:
     # random init weights and bias
     def __init__(self, input_size, hidden_size_1, hidden_size_2, hidden_size_3, output_size, weight_init_std):
         self.dict = {}
-        self.dict['w1'] = weight_init_std * np.random.randn(input_size, hidden_size_1)
+#         self.dict['w1'] = weight_init_std * np.random.randn(input_size, hidden_size_1)
+#         self.dict['b1'] = np.zeros(hidden_size_1)
+#         self.dict['w2'] = weight_init_std * np.random.randn(hidden_size_1, hidden_size_2)
+#         self.dict['b2'] = np.zeros(hidden_size_2)
+#         self.dict['w3'] = weight_init_std * np.random.randn(hidden_size_2, hidden_size_3)
+#         self.dict['b3'] = np.zeros(hidden_size_3)
+#         self.dict['w4'] = weight_init_std * np.random.randn(hidden_size_3, output_size)
+#         self.dict['b4'] = np.zeros(output_size)
+        self.dict['w1'] = np.random.randn(input_size, hidden_size_1) / np.sqrt(input_size/2)
         self.dict['b1'] = np.zeros(hidden_size_1)
-        self.dict['w2'] = weight_init_std * np.random.randn(hidden_size_1, hidden_size_2)
+        self.dict['w2'] = np.random.randn(hidden_size_1, hidden_size_2) / np.sqrt(hidden_size_1/2)
         self.dict['b2'] = np.zeros(hidden_size_2)
-        self.dict['w3'] = weight_init_std * np.random.randn(hidden_size_2, hidden_size_3)
+        self.dict['w3'] = np.random.randn(hidden_size_2, hidden_size_3) / np.sqrt(hidden_size_2/2)
         self.dict['b3'] = np.zeros(hidden_size_3)
-        self.dict['w4'] = weight_init_std * np.random.randn(hidden_size_3, output_size)
+        self.dict['w4'] = np.random.randn(hidden_size_3, output_size) / np.sqrt(hidden_size_3/2)
         self.dict['b4'] = np.zeros(output_size)
 
     # predict
