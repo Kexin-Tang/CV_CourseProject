@@ -23,4 +23,8 @@ Net.py      | define the network structure and forward/backward process
 mnist.py    | how to load data and label from .gz files
 main.py     | batch learning and figure plotting
 
-![res.png](https://i.loli.net/2020/09/30/K6GwINWJFex9pfi.png)
+Different activate functions will contribute to different output
+![activate_function.png](https://i.loli.net/2020/10/05/Law8IhSVxclJjDG.png)
+
+Different init principle will contribute to different output
+![init.png](https://i.loli.net/2020/10/05/Qrg83Ct5vjehBDZ.png)
