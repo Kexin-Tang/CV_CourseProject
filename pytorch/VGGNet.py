@@ -38,7 +38,7 @@ def train(args, model, device, train_loader, optim, epoch):
         loss.backward()                        # backward prop
         optim.step()
 
-        if idx % 50 == 0:
+        if idx % 100 == 0:
             print('epoch: ' + str(epoch) + '\ttrain iter: ' + str(idx*len(data)) + '\tloss: ' + str(loss.item()))
             loss_train.append(loss.item())
     return loss_train
@@ -79,12 +79,12 @@ if __name__ == "__main__":
 
     # set the parameters in console and their default parameters
     parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Example')
-    parser.add_argument('--batch', type=int, default=128, metavar='N',
-                        help='input batch size for training (default: 128)')
-    parser.add_argument('--test_batch', type=int, default=100, metavar='N',
-                        help='input batch size for testing (default: 100)')
-    parser.add_argument('--epochs', type=int, default=10, metavar='N',
-                        help='number of epochs to train (default: 30)')
+    parser.add_argument('--batch', type=int, default=100, metavar='N',
+                        help='input batch size for training (default: 100)')
+    parser.add_argument('--test_batch', type=int, default=1000, metavar='N',
+                        help='input batch size for testing (default: 1000)')
+    parser.add_argument('--epochs', type=int, default=20, metavar='N',
+                        help='number of epochs to train (default: 20)')
     parser.add_argument('--lr', type=float, default=0.01, metavar='LR',
                         help='learning rate (default: 0.01)')
     parser.add_argument('--save_model', action='store_true', default=False,
@@ -92,7 +92,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()          # load parameters
     torch.manual_seed(5)                # generate random seeds for cpu to shuffle dataset
-    device = torch.device("cpu")        # use cpu
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     print("data load starting...")
     # load mnist from torchvision and normalize data
@@ -113,7 +113,7 @@ if __name__ == "__main__":
 
     model = VGG16Net().to(device)
     crit = N.CrossEntropyLoss()
-    optimizer = optim.SGD(model.parameters(), lr=args.lr, momentum=0.9, weight_decay=5e-4)  # Adam SGD optimizer
+    optimizer = optim.SGD(model.parameters(), lr=args.lr,momentum=0.9, weight_decay=5e-4)  # Adam SGD optimizer
 
     for epoch in range(1, args.epochs + 1):
         train_loss = train(args, model, device, train_loader, optimizer, epoch)
