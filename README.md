@@ -10,13 +10,13 @@ name | usage
 
 
 
-#### Proj1 - perceptron
+### Proj1 - perceptron
 <img src="https://i.loli.net/2020/09/23/s1lwqPMGhbjfnHS.png" width = "450" height = "300" alt="perceptron"/><img src="https://i.loli.net/2020/09/27/SrINkUFfJAewBLi.png" width = "450" height = "300" alt="loss"/>
 
-#### Proj2 - neural network
+### Proj2 - neural network
 <img src="https://i.loli.net/2020/09/27/Ag5c4GEhKy8vtZU.png" width = "450" height = "300" alt="dbmoon"/>
 
-#### Proj3 - mnist
+### Proj3 - mnist
 file | usage
 :----:|:----:
 function.py | define the activate function such as ReLU, softmax and sigmoid
@@ -32,13 +32,15 @@ Different init principle will contribute to different output
 
 <img src="https://i.loli.net/2020/10/05/Qrg83Ct5vjehBDZ.png" width = "1000" height = "300" alt="init"/>
 
-#### Proj4 - pytorch
+### Proj4 - pytorch
 file | usage
 :----:|:----:
 MyNet.py | generate a simply CNN model
 ResNet.py      | transfer learning from Res50
 VGG.py    | transfer learning from VGG16
 Plot.py     | plot the final results, such as loss and acc
+
+###### note: In ./pytorch/models I only store three models, because Res50 and VGG16 models are too huge to store in Github
 
 <img src="https://i.loli.net/2020/10/07/K34BasirfH1WRlD.png" width = "450" height = "300" alt="MyNet_acc"/><img src="https://i.loli.net/2020/10/07/cmzdZabGqHkMwRi.png" width = "450" height = "300" alt="MyNet_loss"/>
 
