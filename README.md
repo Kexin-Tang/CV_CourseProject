@@ -1,5 +1,7 @@
 # Computer Vision Course Projects
 
+This project is about tasks for Computer Vision Course in Electronic Information and Communication Department, Huazhong University of Science and Technology.
+
 ## Project navigation
 name | usage
 :----:|:----:
@@ -40,7 +42,7 @@ ResNet.py      | transfer learning from Res50
 VGG.py    | transfer learning from VGG16
 Plot.py     | plot the final results, such as loss and acc
 
-###### note: In ./pytorch/models I only store three models, because Res50 and VGG16 models are too huge to store in Github
+*note: In ./pytorch/models I only store three models, because Res50 and VGG16 models are too huge to store in Github*
 
 <img src="https://i.loli.net/2020/10/07/K34BasirfH1WRlD.png" width = "450" height = "300" alt="MyNet_acc"/><img src="https://i.loli.net/2020/10/07/cmzdZabGqHkMwRi.png" width = "450" height = "300" alt="MyNet_loss"/>
 
