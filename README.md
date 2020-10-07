@@ -26,11 +26,11 @@ main.py     | batch learning and figure plotting
 
 Different activate functions will contribute to different output
 
-<img src="https://i.loli.net/2020/10/05/Law8IhSVxclJjDG.png" width = "600" height = "300" alt="activate_function"/>
+<img src="https://i.loli.net/2020/10/05/Law8IhSVxclJjDG.png" width = "1000" height = "300" alt="activate_function"/>
 
 Different init principle will contribute to different output
 
-<img src="https://i.loli.net/2020/10/05/Qrg83Ct5vjehBDZ.png" width = "600" height = "300" alt="init"/>
+<img src="https://i.loli.net/2020/10/05/Qrg83Ct5vjehBDZ.png" width = "1000" height = "300" alt="init"/>
 
 #### Proj4 - pytorch
 file | usage
@@ -41,3 +41,5 @@ VGG.py    | transfer learning from VGG16
 Plot.py     | plot the final results, such as loss and acc
 
 <img src="https://i.loli.net/2020/10/07/K34BasirfH1WRlD.png" width = "450" height = "300" alt="MyNet_acc"/><img src="https://i.loli.net/2020/10/07/cmzdZabGqHkMwRi.png" width = "450" height = "300" alt="MyNet_loss"/>
+
+<img src="https://i.loli.net/2020/10/07/ibXnWpNKMPmSTrH.png" width = "450" height = "300" alt="Res50&VGG16_acc"><img src="https://i.loli.net/2020/10/07/r4Uu3QW62nDsYGv.png" width = "450" height = "300" alt="Res50&VGG16_loss">
