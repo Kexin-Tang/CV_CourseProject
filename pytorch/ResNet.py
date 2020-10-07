@@ -50,7 +50,7 @@ def test(args, model, device, test_loader):
         for data, label in test_loader:
             data, label = data.to(device), label.to(device)
             y = model(data)
-            loss += crit(y, label, reduction='sum').item()              # sum of batch loss
+            loss += crit(y, label).item()              # sum of batch loss
             pred = y.argmax(dim=1, keepdim=True)                        # get index of the max prob
             acc += pred.eq(label.view_as(pred)).sum().item()
 
