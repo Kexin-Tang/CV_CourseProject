@@ -6,6 +6,7 @@ name | usage
 [Proj1](https://github.com/Kexin-Tang/CV_CourseProject/blob/master/perceptron.py) | perceptron for linear classification
 [Proj2](https://github.com/Kexin-Tang/CV_CourseProject/blob/master/neural_network.py) | one layer neural network for classification
 [Proj3](https://github.com/Kexin-Tang/CV_CourseProject/tree/master/mnist) | multi-layer neural network for mnist classification
+[Proj4](https://github.com/Kexin-Tang/CV_CourseProject/tree/master/pytorch) | pytorch version for mnist or cifar10 classification
 
 
 
@@ -28,3 +29,14 @@ Different activate functions will contribute to different output
 
 Different init principle will contribute to different output
 ![init.png](https://i.loli.net/2020/10/05/Qrg83Ct5vjehBDZ.png)
+
+#### Proj4 - pytorch
+file | usage
+:----:|:----:
+MyNet.py | generate a simply CNN model
+ResNet.py      | transfer learning from Res50
+VGG.py    | transfer learning from VGG16
+Plot.py     | plot the final results, such as loss and acc
+
+![MyNet_acc.png](https://i.loli.net/2020/10/07/K34BasirfH1WRlD.png)
+![MyNet_loss.png](https://i.loli.net/2020/10/07/cmzdZabGqHkMwRi.png)
