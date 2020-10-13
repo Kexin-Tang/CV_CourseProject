@@ -68,6 +68,9 @@ def drawNet():
     loss_vgg = []
     acc_vgg = []
 
+    loss_vgg_adam = []
+    acc_vgg_adam = []
+
     loss_res = []
     acc_res = []
 
@@ -81,6 +84,14 @@ def drawNet():
 
         acc = f.readline()
         acc_vgg = np.array(ast.literal_eval(acc))
+
+    with open('./results/VGG16_Adam.txt','r') as f:
+        loss = f.readline()
+        loss = np.array(ast.literal_eval(loss))
+        loss_vgg_adam = loss.reshape(-1, 1)
+
+        acc = f.readline()
+        acc_vgg_adam = np.array(ast.literal_eval(acc))
 
     with open('./results/Res50.txt', 'r') as f:
         loss = f.readline()
