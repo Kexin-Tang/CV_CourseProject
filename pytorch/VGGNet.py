@@ -10,14 +10,11 @@ class VGG16Net(N.Module):
     def __init__(self):
         super(VGG16Net,self).__init__()
         net = models.vgg16(pretrained=True)
-        # forget to set previous Sequential to blank
-        # net.classifier = N.Sequential()
-        # fc_inputs = vgg16.fc.in_features
+        net.classifier = N.Sequential() # clean the vgg16 pretrained model's fc layer
         self.features = net
         self.classifier = N.Sequential(
-            # the 1000 is wrong, if you set the net.classifier to blank
-            # N.Linear(fc_inputs, 128)
-            N.Linear(1000, 128),
+            # 512*7*7 depend on the VGG model's ConV output size
+            N.Linear(512*7*7, 128),
             N.ReLU(),
             N.Dropout(),
             N.Linear(128, 10))
@@ -118,7 +115,8 @@ if __name__ == "__main__":
 
     model = VGG16Net().to(device)
     crit = N.CrossEntropyLoss()
-    optimizer = optim.SGD(model.parameters(), lr=args.lr,momentum=0.9, weight_decay=5e-4)  # Adam SGD optimizer
+    # optimizer = optim.SGD(model.parameters(), lr=args.lr,momentum=0.9, weight_decay=5e-4)  # Momentum SGD optimizer
+    optimizer = optim.Adam(model.parameters(), lr=args.lr)  # Adam SGD optimizer
 
     for epoch in range(1, args.epochs + 1):
         train_loss = train(args, model, device, train_loader, optimizer, epoch)
