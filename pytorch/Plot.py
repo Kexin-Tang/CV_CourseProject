@@ -61,11 +61,9 @@ def drawMyNet():
 
 
 def drawNet():
-    x_vgg = np.linspace(1, 20, 100)
-    x_res = np.linspace(1, 30, 150)
+    x = np.linspace(1, 20, 100)
 
-    x_acc_vgg = np.linspace(1, 20, 20)
-    x_acc_res = np.linspace(1, 30, 30)
+    x_acc = np.linspace(1, 20, 20)
 
     loss_vgg = []
     acc_vgg = []
@@ -102,9 +100,10 @@ def drawNet():
         acc_res_adam = np.array(ast.literal_eval(acc))
 
     plt.figure()
-    plt.plot(x_vgg, loss_vgg, color='blue', label='vgg16', ls='--')
-    plt.plot(x_res, loss_res, color='red', label='res50(momentum)', ls='-')
-    plt.plot(x_res, loss_res_adam, color='purple', label='res50(adam)', ls='-.')
+    plt.plot(x, loss_vgg, color='blue', label='vgg16(momentum)', ls='--')
+    plt.plot(x, loss_vgg_adam, color='green', label='vgg16(adam)', ls=':')
+    plt.plot(x, loss_res, color='red', label='res50(momentum)', ls='-')
+    plt.plot(x, loss_res_adam, color='purple', label='res50(adam)', ls='-.')
     plt.xlabel('epoch')
     plt.ylabel('loss')
     plt.title('VGG16 Vs Res50')
@@ -112,9 +111,10 @@ def drawNet():
     plt.savefig('vgg16_res50_loss.png')
 
     plt.figure()
-    plt.plot(x_acc_vgg, acc_vgg, color='blue', label='vgg16', ls='--')
-    plt.plot(x_acc_res, acc_res, color='red', label='res50(momentum)', ls='-')
-    plt.plot(x_acc_res, acc_res_adam, color='purple', label='res50(adam)', ls='-.')
+    plt.plot(x_acc, acc_vgg, color='blue', label='vgg16', ls='--')
+    plt.plot(x_acc, acc_vgg_adam, color='green', label='vgg16(adam)', ls=':')
+    plt.plot(x_acc, acc_res, color='red', label='res50(momentum)', ls='-')
+    plt.plot(x_acc, acc_res_adam, color='purple', label='res50(adam)', ls='-.')
     plt.xlabel('epoch')
     plt.ylabel('acc')
     plt.title('VGG16 Vs Res50')
