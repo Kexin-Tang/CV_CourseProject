@@ -10,8 +10,13 @@ class VGG16Net(N.Module):
     def __init__(self):
         super(VGG16Net,self).__init__()
         net = models.vgg16(pretrained=True)
+        # forget to set previous Sequential to blank
+        # net.classifier = N.Sequential()
+        # fc_inputs = vgg16.fc.in_features
         self.features = net
         self.classifier = N.Sequential(
+            # the 1000 is wrong, if you set the net.classifier to blank
+            # N.Linear(fc_inputs, 128)
             N.Linear(1000, 128),
             N.ReLU(),
             N.Dropout(),
