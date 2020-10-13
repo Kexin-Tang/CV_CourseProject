@@ -14,10 +14,13 @@ class VGG16Net(N.Module):
         self.features = net
         self.classifier = N.Sequential(
             # 512*7*7 depend on the VGG model's ConV output size
-            N.Linear(512*7*7, 128),
+            N.Linear(512*7*7, 256),
             N.ReLU(),
             N.Dropout(),
-            N.Linear(128, 10))
+            N.Linear(256, 64),
+            N.ReLU(),
+            N.Dropout(),
+            N.Linear(64, 10))
 
 
     def forward(self, x):
