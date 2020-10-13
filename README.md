@@ -13,7 +13,7 @@ name | usage
 
 
 ### Proj1 - perceptron
-<img src="https://i.loli.net/2020/09/23/s1lwqPMGhbjfnHS.png" width = "450" height = "300" alt="perceptron"/><img src="https://i.loli.net/2020/09/27/SrINkUFfJAewBLi.png" width = "450" height = "300" alt="loss"/>
+<img src="https://i.loli.net/2020/09/23/s1lwqPMGhbjfnHS.png" width = "300" height = "200" alt="perceptron"/><img src="https://i.loli.net/2020/09/27/SrINkUFfJAewBLi.png" width = "300" height = "200" alt="loss"/>
 
 ### Proj2 - neural network
 <img src="https://i.loli.net/2020/09/27/Ag5c4GEhKy8vtZU.png" width = "450" height = "300" alt="dbmoon"/>
