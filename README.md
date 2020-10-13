@@ -44,6 +44,6 @@ Plot.py     | plot the final results, such as loss and acc
 
 *note: In ./pytorch/models I only store three models, because Res50 and VGG16 models are too huge to store in Github*
 
-<img src="https://i.loli.net/2020/10/07/K34BasirfH1WRlD.png" width = "450" height = "300" alt="MyNet_acc"/><img src="https://i.loli.net/2020/10/07/cmzdZabGqHkMwRi.png" width = "450" height = "300" alt="MyNet_loss"/>
+<img src="https://i.loli.net/2020/10/07/K34BasirfH1WRlD.png" width = "300" height = "200" alt="MyNet_acc"/><img src="https://i.loli.net/2020/10/07/cmzdZabGqHkMwRi.png" width = "300" height = "200" alt="MyNet_loss"/>
 
-<img src="https://i.loli.net/2020/10/07/ibXnWpNKMPmSTrH.png" width = "450" height = "300" alt="Res50&VGG16_acc"><img src="https://i.loli.net/2020/10/07/r4Uu3QW62nDsYGv.png" width = "450" height = "300" alt="Res50&VGG16_loss">
+<img src="https://i.loli.net/2020/10/13/r9ISqshJxX8Uk45.png" width = "300" height = "200" alt="Res50&VGG16_acc"><img src="https://i.loli.net/2020/10/13/f5UNYhHm7J6TLab.png" width = "300" height = "200" alt="Res50&VGG16_loss">
