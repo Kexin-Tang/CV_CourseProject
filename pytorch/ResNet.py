@@ -10,9 +10,16 @@ class ResNet(N.Module):
     def __init__(self):
         super(ResNet,self).__init__()
         net = models.resnet50(pretrained=True)          # load the pretrained parameters
+        net.classifier = N.Sequential()                 # clean the pretrained res50 fc layers
         self.features = net                             # save the parameters and models
         self.classifier = N.Sequential(                 # make new layers for our tasks
-            N.Linear(1000, 10))
+            N.Linear(1000, 256),
+            N.ReLU(),
+            N.Dropout(),
+            N.Linear(256, 64),
+            N.ReLU(),
+            N.Dropout(),
+            N.Linear(64, 10))
 
 
     def forward(self, x):
@@ -80,8 +87,8 @@ if __name__ == "__main__":
                         help='input batch size for training (default: 100)')
     parser.add_argument('--test_batch', type=int, default=1000, metavar='N',
                         help='input batch size for testing (default: 1000)')
-    parser.add_argument('--epochs', type=int, default=30, metavar='N',
-                        help='number of epochs to train (default: 30)')
+    parser.add_argument('--epochs', type=int, default=20, metavar='N',
+                        help='number of epochs to train (default: 20)')
     parser.add_argument('--lr', type=float, default=0.01, metavar='LR',
                         help='learning rate (default: 0.01)')
     parser.add_argument('--save_model', action='store_true', default=False,
