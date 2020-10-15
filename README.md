@@ -9,6 +9,7 @@ name | usage
 [Proj2](https://github.com/Kexin-Tang/CV_CourseProject/blob/master/neural_network.py) | one layer neural network for classification
 [Proj3](https://github.com/Kexin-Tang/CV_CourseProject/tree/master/mnist) | multi-layer neural network for mnist classification
 [Proj4](https://github.com/Kexin-Tang/CV_CourseProject/tree/master/pytorch) | pytorch version for mnist or cifar10 classification
+[Proj5](https://github.com/Kexin-Tang/CV_CourseProject/tree/master/Localization) | pytorch version for single object localization
 
 
 
@@ -34,7 +35,7 @@ Different init principle will contribute to different output
 
 <img src="https://i.loli.net/2020/10/05/Qrg83Ct5vjehBDZ.png" width = "1000" height = "300" alt="init"/>
 
-### Proj4 - pytorch
+### Proj4 - pytorch classification
 file | usage
 :----:|:----:
 MyNet.py | generate a simply CNN model
@@ -47,3 +48,11 @@ Plot.py     | plot the final results, such as loss and acc
 <img src="https://i.loli.net/2020/10/07/K34BasirfH1WRlD.png" width = "300" height = "200" alt="MyNet_acc"/><img src="https://i.loli.net/2020/10/07/cmzdZabGqHkMwRi.png" width = "300" height = "200" alt="MyNet_loss"/>
 
 <img src="https://i.loli.net/2020/10/13/r9ISqshJxX8Uk45.png" width = "300" height = "200" alt="Res50&VGG16_acc"><img src="https://i.loli.net/2020/10/13/f5UNYhHm7J6TLab.png" width = "300" height = "200" alt="Res50&VGG16_loss">
+
+### Proj5 - pytorch single localization
+file | usage
+:----:|:----:
+Net.py | VGG16 pretrained network + customize
+VGG_loss_weight.py | main file, use two loss funcs (cross entropy and Smooth L1) 
+VGGConV_xxx.py    | using ConV instead fc
+visualization.py     | plot the final results
