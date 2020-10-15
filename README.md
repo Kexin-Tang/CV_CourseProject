@@ -56,3 +56,9 @@ Net.py | VGG16 pretrained network + customize
 VGG_loss_weight.py | main file, use two loss funcs (cross entropy and Smooth L1) 
 VGGConV_xxx.py    | using ConV instead fc
 visualization.py     | plot the final results
+dataloader.py     | load data from file as ndarray and tensor
+tiny_vid.tar    |   dataset sampled from VID
+
+<img src="https://i.loli.net/2020/10/15/Pt7npfwHGxdgUQi.png" width = "300" height = "200" alt="weight=1:1"><img src="https://i.loli.net/2020/10/15/cYXB9abdMRvhewP.png" width = "300" height = "200" alt="weight=1:1e-1"><img src="https://i.loli.net/2020/10/15/COuy3rHoIsi5X4U.png" width = "300" height = "200" alt="weight=1:2e-2">
+
+<img src="https://i.loli.net/2020/10/15/qzSriCcQGx5bedM.png" width = "450" height = "300" alt="ConV">
