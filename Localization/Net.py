@@ -6,9 +6,6 @@ from torchvision import models
 import pdb
 import torchvision
 
-'''
-  full connected type
-'''
 class VGG16Net(nn.Module):
     def __init__(self):
         super(VGG16Net,self).__init__()
@@ -44,9 +41,6 @@ class VGG16Net(nn.Module):
 
         return c,r
 
-'''
-  conv type
-'''
 class VGG16ConV(nn.Module):
     def __init__(self):
         super(VGG16ConV,self).__init__()
@@ -113,13 +107,11 @@ class VGG16ConV(nn.Module):
         out = F.relu(self.conv5_2(out))
         out = F.relu(self.conv5_3(out))
         out = self.pool5(out)
-        
-        # classify path
+
         c = F.relu(self.classify_conv1(out))
         c = F.relu(self.classify_conv2(c))
         c = self.classify_conv3(c)
 
-        # regression path
         r = F.relu(self.regression_conv1(out))
         r = F.relu(self.regression_conv2(r))
         r = F.relu(self.regression_conv3(r))
@@ -127,9 +119,7 @@ class VGG16ConV(nn.Module):
 
         return c,r
 
-    '''
-      set the pretrained params in former layers
-    '''
+
     def load_pretrained_layers(self):
         # Current state of base
         state_dict = self.state_dict()
@@ -145,3 +135,39 @@ class VGG16ConV(nn.Module):
 
         self.load_state_dict(state_dict)
 
+
+
+class ResNet50(nn.Module):
+    def __init__(self):
+        super(ResNet50,self).__init__()
+        net = models.resnet50(pretrained=True)
+        net.classifier = nn.Sequential() # clean the vgg16 pretrained model's fc layer
+        self.features = net
+
+        # set the classification path for class classify
+        self.classify_fc1 = nn.Linear(1000, 256)
+        self.classify_fc2 = nn.Linear(256, 32)
+        self.classify_fc3 = nn.Linear(32, 5)
+        # set the regression path for boxes prediction
+        self.regression_fc1 = nn.Linear(1000, 256)
+        self.regression_fc2 = nn.Linear(256, 32)
+        self.regression_fc3 = nn.Linear(32, 4)
+
+
+    def forward(self, x):
+        # warning:  torch shape is [batch, channel, height, weight]
+        #           but x shape is [batch, height, weight, channel]
+        #           so we need to change the shape of input x
+        x = self.features(x)
+        x = x.view(x.size(0),-1)
+
+        # classification path
+        c = F.relu(self.classify_fc1(x))
+        c = F.relu(self.classify_fc2(c))
+        c = self.classify_fc3(c)
+        # regression path
+        r = F.relu(self.regression_fc1(x))
+        r = F.relu(self.regression_fc2(r))
+        r = self.regression_fc3(r)
+
+        return c,r
