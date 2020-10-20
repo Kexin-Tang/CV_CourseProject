@@ -64,3 +64,5 @@ The following figures are "weight=1:1", "weight=1:1e-1", "weight=1:2e-2", "ConV 
 <img src="https://i.loli.net/2020/10/15/Pt7npfwHGxdgUQi.png" width = "300" height = "200" alt="weight=1:1"><img src="https://i.loli.net/2020/10/15/cYXB9abdMRvhewP.png" width = "300" height = "200" alt="weight=1:1e-1">
 
 <img src="https://i.loli.net/2020/10/15/COuy3rHoIsi5X4U.png" width = "300" height = "200" alt="weight=1:2e-2"><img src="https://i.loli.net/2020/10/15/qzSriCcQGx5bedM.png" width = "300" height = "200" alt="ConV">
+
+<img src="https://i.loli.net/2020/10/20/beKqcXmYU7niDwZ.jpg" width = "450" height = "300"><img src="https://i.loli.net/2020/10/20/8dkAewDGPXgNO47.jpg" width = "450" height = "300">
