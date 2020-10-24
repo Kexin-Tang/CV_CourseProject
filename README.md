@@ -87,6 +87,9 @@ eval_seg.py | evaluation code
 train_seg.py | train code
 test_seg.py | plot the output imgs
 pspnet.py | PSP module and network
+sync_batchnorm | syncronize batchnormal in DeepLab
+DeepLab.py | define the deeplab v3 network
+train_seg_deeplab.py | train stage for deeplab net
 
 ##### PSPNet
 <img src="https://i.loli.net/2020/10/22/ykxqiEum9MdahJY.png" alt="psp module">
@@ -99,5 +102,9 @@ pspnet.py | PSP module and network
 <img src="https://i.loli.net/2020/10/22/4sZ5NyFRMeiLbEQ.png" alt="people">
 
 ##### DeepLab v3
+<img src="https://i.loli.net/2020/10/24/da6vSXt5hZlDfmj.png" alt="deeplab">
 
+*`L.Chen, G.Papandreou, F.Schroff, H.Adam. Rethinking Atrous Convolution for Semantic Image Segmentation. arXiv:1706.05587v3`*
+
+- mIoU is about 0.74
 ---
