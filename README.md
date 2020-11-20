@@ -1,6 +1,6 @@
 # Computer Vision Course Projects
 
-This project is about tasks for Computer Vision Course in Electronic Information and Communication Department, Huazhong University of Science and Technology.
+This project is about tasks for Computer Vision Course in Electronic Information and Communication Department, Huazhong University of Science and Technology, and the teacher is Prof. Xinggang Wang.
 
 ## Project navigation
 name | usage
